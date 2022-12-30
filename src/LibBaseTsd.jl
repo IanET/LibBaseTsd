@@ -4,109 +4,404 @@ using CEnum
 
 const UINT_PTR = Culonglong
 
-const INT_PTR = Clonglong
-
-const ULONG_PTR = Culonglong
-
 const LONG_PTR = Clonglong
 
-const UHALF_PTR = Cuint
+const SHORT = Cshort
 
-const HALF_PTR = Cint
+const LONG = Clong
 
-const POINTER_64_INT = Culong
+const HANDLE = Ptr{Cvoid}
 
-const INT8 = Int8
+const WORD = Cushort
 
-const PINT8 = Ptr{Int8}
+const BYTE = Cuchar
 
-const INT16 = Cshort
+const DWORD = Culong
 
-const PINT16 = Ptr{Cshort}
+const HFILE = Cint
 
-const INT32 = Cint
+struct DPI_AWARENESS_CONTEXT__
+    unused::Cint
+end
 
-const PINT32 = Ptr{Cint}
+const DPI_AWARENESS_CONTEXT = Ptr{DPI_AWARENESS_CONTEXT__}
 
-const INT64 = Clonglong
+const ULONG = Culong
 
-const PINT64 = Ptr{Clonglong}
+const PULONG = Ptr{ULONG}
 
-const UINT8 = Cuchar
+const USHORT = Cushort
 
-const PUINT8 = Ptr{Cuchar}
+const PUSHORT = Ptr{USHORT}
 
-const UINT16 = Cushort
+const UCHAR = Cuchar
 
-const PUINT16 = Ptr{Cushort}
+const PUCHAR = Ptr{UCHAR}
 
-const UINT32 = Cuint
+const PSZ = Ptr{Cchar}
 
-const PUINT32 = Ptr{Cuint}
+const BOOL = Cint
 
-const UINT64 = Culonglong
+const FLOAT = Cfloat
 
-const PUINT64 = Ptr{Culonglong}
+const PFLOAT = Ptr{FLOAT}
 
-const LONG32 = Cint
+const PBOOL = Ptr{BOOL}
 
-const PLONG32 = Ptr{Cint}
+const LPBOOL = Ptr{BOOL}
 
-const ULONG32 = Cuint
+const PBYTE = Ptr{BYTE}
 
-const PULONG32 = Ptr{Cuint}
+const LPBYTE = Ptr{BYTE}
 
-const DWORD32 = Cuint
+const PINT = Ptr{Cint}
 
-const PDWORD32 = Ptr{Cuint}
+const LPINT = Ptr{Cint}
 
-const PINT_PTR = Ptr{Clonglong}
+const PWORD = Ptr{WORD}
 
-const PUINT_PTR = Ptr{Culonglong}
+const LPWORD = Ptr{WORD}
 
-const PLONG_PTR = Ptr{Clonglong}
+const LPLONG = Ptr{Clong}
 
-const PULONG_PTR = Ptr{Culonglong}
+const PDWORD = Ptr{DWORD}
 
-const HANDLE64 = Ptr{Cvoid}
+const LPDWORD = Ptr{DWORD}
 
-const PHANDLE64 = Ptr{HANDLE64}
+const LPVOID = Ptr{Cvoid}
 
-const SHANDLE_PTR = Clonglong
+const LPCVOID = Ptr{Cvoid}
 
-const HANDLE_PTR = Culonglong
+const INT = Cint
 
-const PUHALF_PTR = Ptr{Cuint}
+const UINT = Cuint
 
-const PHALF_PTR = Ptr{Cint}
+const PUINT = Ptr{Cuint}
 
-const SIZE_T = ULONG_PTR
+const WPARAM = UINT_PTR
 
-const PSIZE_T = Ptr{ULONG_PTR}
+const LPARAM = LONG_PTR
 
-const SSIZE_T = LONG_PTR
+const LRESULT = LONG_PTR
 
-const PSSIZE_T = Ptr{LONG_PTR}
+const SPHANDLE = Ptr{HANDLE}
 
-const DWORD_PTR = ULONG_PTR
+const LPHANDLE = Ptr{HANDLE}
 
-const PDWORD_PTR = Ptr{ULONG_PTR}
+const HGLOBAL = HANDLE
 
-const LONG64 = Clonglong
+const HLOCAL = HANDLE
 
-const PLONG64 = Ptr{Clonglong}
+const GLOBALHANDLE = HANDLE
 
-const ULONG64 = Culonglong
+const LOCALHANDLE = HANDLE
 
-const PULONG64 = Ptr{Culonglong}
+# typedef INT_PTR ( FAR WINAPI * FARPROC ) ( )
+const FARPROC = Ptr{Cvoid}
 
-const DWORD64 = Culonglong
+# typedef INT_PTR ( NEAR WINAPI * NEARPROC ) ( )
+const NEARPROC = Ptr{Cvoid}
 
-const PDWORD64 = Ptr{Culonglong}
+# typedef INT_PTR ( WINAPI * PROC ) ( )
+const PROC = Ptr{Cvoid}
 
-const KAFFINITY = ULONG_PTR
+const ATOM = WORD
 
-const PKAFFINITY = Ptr{KAFFINITY}
+struct HKEY__
+    unused::Cint
+end
+
+const HKEY = Ptr{HKEY__}
+
+const PHKEY = Ptr{HKEY}
+
+struct HMETAFILE__
+    unused::Cint
+end
+
+const HMETAFILE = Ptr{HMETAFILE__}
+
+struct HINSTANCE__
+    unused::Cint
+end
+
+const HINSTANCE = Ptr{HINSTANCE__}
+
+const HMODULE = HINSTANCE
+
+struct HRGN__
+    unused::Cint
+end
+
+const HRGN = Ptr{HRGN__}
+
+struct HRSRC__
+    unused::Cint
+end
+
+const HRSRC = Ptr{HRSRC__}
+
+struct HSPRITE__
+    unused::Cint
+end
+
+const HSPRITE = Ptr{HSPRITE__}
+
+struct HLSURF__
+    unused::Cint
+end
+
+const HLSURF = Ptr{HLSURF__}
+
+struct HSTR__
+    unused::Cint
+end
+
+const HSTR = Ptr{HSTR__}
+
+struct HTASK__
+    unused::Cint
+end
+
+const HTASK = Ptr{HTASK__}
+
+struct HWINSTA__
+    unused::Cint
+end
+
+const HWINSTA = Ptr{HWINSTA__}
+
+struct HKL__
+    unused::Cint
+end
+
+const HKL = Ptr{HKL__}
+
+struct _FILETIME
+    dwLowDateTime::DWORD
+    dwHighDateTime::DWORD
+end
+
+const FILETIME = _FILETIME
+
+const PFILETIME = Ptr{_FILETIME}
+
+const LPFILETIME = Ptr{_FILETIME}
+
+struct HWND__
+    unused::Cint
+end
+
+const HWND = Ptr{HWND__}
+
+struct HHOOK__
+    unused::Cint
+end
+
+const HHOOK = Ptr{HHOOK__}
+
+const HGDIOBJ = Ptr{Cvoid}
+
+struct HACCEL__
+    unused::Cint
+end
+
+const HACCEL = Ptr{HACCEL__}
+
+struct HBITMAP__
+    unused::Cint
+end
+
+const HBITMAP = Ptr{HBITMAP__}
+
+struct HBRUSH__
+    unused::Cint
+end
+
+const HBRUSH = Ptr{HBRUSH__}
+
+struct HCOLORSPACE__
+    unused::Cint
+end
+
+const HCOLORSPACE = Ptr{HCOLORSPACE__}
+
+struct HDC__
+    unused::Cint
+end
+
+const HDC = Ptr{HDC__}
+
+struct HGLRC__
+    unused::Cint
+end
+
+const HGLRC = Ptr{HGLRC__}
+
+struct HDESK__
+    unused::Cint
+end
+
+const HDESK = Ptr{HDESK__}
+
+struct HENHMETAFILE__
+    unused::Cint
+end
+
+const HENHMETAFILE = Ptr{HENHMETAFILE__}
+
+struct HFONT__
+    unused::Cint
+end
+
+const HFONT = Ptr{HFONT__}
+
+struct HICON__
+    unused::Cint
+end
+
+const HICON = Ptr{HICON__}
+
+struct HMENU__
+    unused::Cint
+end
+
+const HMENU = Ptr{HMENU__}
+
+struct HPALETTE__
+    unused::Cint
+end
+
+const HPALETTE = Ptr{HPALETTE__}
+
+struct HPEN__
+    unused::Cint
+end
+
+const HPEN = Ptr{HPEN__}
+
+struct HWINEVENTHOOK__
+    unused::Cint
+end
+
+const HWINEVENTHOOK = Ptr{HWINEVENTHOOK__}
+
+struct HMONITOR__
+    unused::Cint
+end
+
+const HMONITOR = Ptr{HMONITOR__}
+
+struct HUMPD__
+    unused::Cint
+end
+
+const HUMPD = Ptr{HUMPD__}
+
+const HCURSOR = HICON
+
+const COLORREF = DWORD
+
+const LPCOLORREF = Ptr{DWORD}
+
+struct tagRECT
+    left::LONG
+    top::LONG
+    right::LONG
+    bottom::LONG
+end
+
+const RECT = tagRECT
+
+const PRECT = Ptr{tagRECT}
+
+const NPRECT = Ptr{tagRECT}
+
+const LPRECT = Ptr{tagRECT}
+
+const LPCRECT = Ptr{RECT}
+
+struct _RECTL
+    left::LONG
+    top::LONG
+    right::LONG
+    bottom::LONG
+end
+
+const RECTL = _RECTL
+
+const PRECTL = Ptr{_RECTL}
+
+const LPRECTL = Ptr{_RECTL}
+
+const LPCRECTL = Ptr{RECTL}
+
+struct tagPOINT
+    x::LONG
+    y::LONG
+end
+
+const POINT = tagPOINT
+
+const PPOINT = Ptr{tagPOINT}
+
+const NPPOINT = Ptr{tagPOINT}
+
+const LPPOINT = Ptr{tagPOINT}
+
+struct _POINTL
+    x::LONG
+    y::LONG
+end
+
+const POINTL = _POINTL
+
+const PPOINTL = Ptr{_POINTL}
+
+struct tagSIZE
+    cx::LONG
+    cy::LONG
+end
+
+const SIZE = tagSIZE
+
+const PSIZE = Ptr{tagSIZE}
+
+const LPSIZE = Ptr{tagSIZE}
+
+const SIZEL = SIZE
+
+const PSIZEL = Ptr{SIZE}
+
+const LPSIZEL = Ptr{SIZE}
+
+struct tagPOINTS
+    x::SHORT
+    y::SHORT
+end
+
+const POINTS = tagPOINTS
+
+const PPOINTS = Ptr{tagPOINTS}
+
+const LPPOINTS = Ptr{tagPOINTS}
+
+struct APP_LOCAL_DEVICE_ID
+    value::NTuple{32, BYTE}
+end
+
+@cenum DPI_AWARENESS::Int32 begin
+    DPI_AWARENESS_INVALID = -1
+    DPI_AWARENESS_UNAWARE = 0
+    DPI_AWARENESS_SYSTEM_AWARE = 1
+    DPI_AWARENESS_PER_MONITOR_AWARE = 2
+end
+
+@cenum DPI_HOSTING_BEHAVIOR::Int32 begin
+    DPI_HOSTING_BEHAVIOR_INVALID = -1
+    DPI_HOSTING_BEHAVIOR_DEFAULT = 0
+    DPI_HOSTING_BEHAVIOR_MIXED = 1
+end
 
 const WINVER = 0x0501
 
@@ -114,20 +409,82 @@ const _WIN32_WINNT = 0x0501
 
 const __int64 = Clonglong
 
-const __int3264 = __int64
+const STRICT = 1
 
-# Skipping MacroDefinition: ADDRESS_TAG_BIT 0x40000000000UI64
+const MAX_PATH = 260
 
-const MAXUINT_PTR = ~(UINT_PTR(0))
+# Skipping MacroDefinition: NULL ( ( void * ) 0 )
 
-const MAXINT_PTR = INT_PTR(MAXUINT_PTR >> 1)
+const FALSE = 0
 
-const MININT_PTR = ~MAXINT_PTR
+const TRUE = 1
 
-const MAXULONG_PTR = ~(ULONG_PTR(0))
+# Skipping MacroDefinition: CONST const
 
-const MAXLONG_PTR = LONG_PTR(MAXULONG_PTR >> 1)
+const HFILE_ERROR = HFILE(-1)
 
-const MINLONG_PTR = ~MAXLONG_PTR
+const APP_LOCAL_DEVICE_ID_SIZE = 32
+
+const DM_UPDATE = 1
+
+const DM_COPY = 2
+
+const DM_PROMPT = 4
+
+const DM_MODIFY = 8
+
+const DM_IN_BUFFER = DM_MODIFY
+
+const DM_IN_PROMPT = DM_PROMPT
+
+const DM_OUT_BUFFER = DM_COPY
+
+const DM_OUT_DEFAULT = DM_UPDATE
+
+const DC_FIELDS = 1
+
+const DC_PAPERS = 2
+
+const DC_PAPERSIZE = 3
+
+const DC_MINEXTENT = 4
+
+const DC_MAXEXTENT = 5
+
+const DC_BINS = 6
+
+const DC_DUPLEX = 7
+
+const DC_SIZE = 8
+
+const DC_EXTRA = 9
+
+const DC_VERSION = 10
+
+const DC_DRIVER = 11
+
+const DC_BINNAMES = 12
+
+const DC_ENUMRESOLUTIONS = 13
+
+const DC_FILEDEPENDENCIES = 14
+
+const DC_TRUETYPE = 15
+
+const DC_PAPERNAMES = 16
+
+const DC_ORIENTATION = 17
+
+const DC_COPIES = 18
+
+const DPI_AWARENESS_CONTEXT_UNAWARE = DPI_AWARENESS_CONTEXT(-1)
+
+const DPI_AWARENESS_CONTEXT_SYSTEM_AWARE = DPI_AWARENESS_CONTEXT(-2)
+
+const DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE = DPI_AWARENESS_CONTEXT(-3)
+
+const DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = DPI_AWARENESS_CONTEXT(-4)
+
+const DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED = DPI_AWARENESS_CONTEXT(-5)
 
 end # module
