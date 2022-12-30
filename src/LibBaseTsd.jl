@@ -2,19 +2,15 @@ module LibBaseTsd
 
 using CEnum
 
-const UINT_PTR = Culonglong
-
-const LONG_PTR = Clonglong
-
-const SHORT = Cshort
-
-const LONG = Clong
-
-const HANDLE = Ptr{Cvoid}
-
 const WORD = Cushort
 
 const BYTE = Cuchar
+
+const ULONG_PTR = Culonglong
+
+const DWORD_PTR = ULONG_PTR
+
+const LONG = Clong
 
 const DWORD = Culong
 
@@ -25,6 +21,80 @@ struct DPI_AWARENESS_CONTEXT__
 end
 
 const DPI_AWARENESS_CONTEXT = Ptr{DPI_AWARENESS_CONTEXT__}
+
+const wchar_t = Cushort
+
+const CHAR = Cchar
+
+const SHORT = Cshort
+
+const INT = Cint
+
+const WCHAR = wchar_t
+
+const PCHAR = Ptr{CHAR}
+
+const LPCH = Ptr{CHAR}
+
+const PCH = Ptr{CHAR}
+
+const LPCCH = Ptr{CHAR}
+
+const PCCH = Ptr{CHAR}
+
+const NPSTR = Ptr{CHAR}
+
+const LPSTR = Ptr{CHAR}
+
+const PSTR = Ptr{CHAR}
+
+const PZPSTR = Ptr{PSTR}
+
+const PCZPSTR = Ptr{PSTR}
+
+const LPCSTR = Ptr{CHAR}
+
+const PCSTR = Ptr{CHAR}
+
+const PZPCSTR = Ptr{PCSTR}
+
+const PCZPCSTR = Ptr{PCSTR}
+
+const LPWSTR = Ptr{WCHAR}
+
+const LPCWSTR = Ptr{WCHAR}
+
+const PZZSTR = Ptr{CHAR}
+
+const PCZZSTR = Ptr{CHAR}
+
+const PNZCH = Ptr{CHAR}
+
+const PCNZCH = Ptr{CHAR}
+
+const TCHAR = WCHAR
+
+const PTCHAR = Ptr{WCHAR}
+
+const TBYTE = WCHAR
+
+const PTBYTE = Ptr{WCHAR}
+
+const PTSTR = LPWSTR
+
+const LPTSTR = LPWSTR
+
+const PCTSTR = LPCWSTR
+
+const LPCTSTR = LPCWSTR
+
+const UINT_PTR = Culonglong
+
+const PVOID = Ptr{Cvoid}
+
+const HANDLE = PVOID
+
+const LONG_PTR = Clonglong
 
 const ULONG = Culong
 
@@ -71,8 +141,6 @@ const LPDWORD = Ptr{DWORD}
 const LPVOID = Ptr{Cvoid}
 
 const LPCVOID = Ptr{Cvoid}
-
-const INT = Cint
 
 const UINT = Cuint
 
@@ -418,8 +486,6 @@ const MAX_PATH = 260
 const FALSE = 0
 
 const TRUE = 1
-
-# Skipping MacroDefinition: CONST const
 
 const HFILE_ERROR = HFILE(-1)
 
