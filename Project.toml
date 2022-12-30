@@ -1,0 +1,4 @@
+name = "LibBaseTsd"
+uuid = "7e56034f-6cb4-40fe-a0fc-e21059f7fef0"
+authors = ["Ian Ellison-Taylor <ianet@microsoft.com>"]
+version = "0.1.0"
