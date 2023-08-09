@@ -16,11 +16,11 @@ const DWORD = Culong
 
 const HFILE = Cint
 
-struct DPI_AWARENESS_CONTEXT__
-    unused::Cint
-end
+const PVOID = Ptr{Cvoid}
 
-const DPI_AWARENESS_CONTEXT = Ptr{DPI_AWARENESS_CONTEXT__}
+const HANDLE = PVOID
+
+const DPI_AWARENESS_CONTEXT = HANDLE
 
 const wchar_t = Cushort
 
@@ -89,10 +89,6 @@ const PCTSTR = LPCWSTR
 const LPCTSTR = LPCWSTR
 
 const UINT_PTR = Culonglong
-
-const PVOID = Ptr{Cvoid}
-
-const HANDLE = PVOID
 
 const LONG_PTR = Clonglong
 
@@ -175,75 +171,31 @@ const PROC = Ptr{Cvoid}
 
 const ATOM = WORD
 
-struct HKEY__
-    unused::Cint
-end
-
-const HKEY = Ptr{HKEY__}
+const HKEY = HANDLE
 
 const PHKEY = Ptr{HKEY}
 
-struct HMETAFILE__
-    unused::Cint
-end
+const HMETAFILE = HANDLE
 
-const HMETAFILE = Ptr{HMETAFILE__}
-
-struct HINSTANCE__
-    unused::Cint
-end
-
-const HINSTANCE = Ptr{HINSTANCE__}
+const HINSTANCE = HANDLE
 
 const HMODULE = HINSTANCE
 
-struct HRGN__
-    unused::Cint
-end
+const HRGN = HANDLE
 
-const HRGN = Ptr{HRGN__}
+const HRSRC = HANDLE
 
-struct HRSRC__
-    unused::Cint
-end
+const HSPRITE = HANDLE
 
-const HRSRC = Ptr{HRSRC__}
+const HLSURF = HANDLE
 
-struct HSPRITE__
-    unused::Cint
-end
+const HSTR = HANDLE
 
-const HSPRITE = Ptr{HSPRITE__}
+const HTASK = HANDLE
 
-struct HLSURF__
-    unused::Cint
-end
+const HWINSTA = HANDLE
 
-const HLSURF = Ptr{HLSURF__}
-
-struct HSTR__
-    unused::Cint
-end
-
-const HSTR = Ptr{HSTR__}
-
-struct HTASK__
-    unused::Cint
-end
-
-const HTASK = Ptr{HTASK__}
-
-struct HWINSTA__
-    unused::Cint
-end
-
-const HWINSTA = Ptr{HWINSTA__}
-
-struct HKL__
-    unused::Cint
-end
-
-const HKL = Ptr{HKL__}
+const HKL = HANDLE
 
 struct _FILETIME
     dwLowDateTime::DWORD
@@ -256,115 +208,43 @@ const PFILETIME = Ptr{_FILETIME}
 
 const LPFILETIME = Ptr{_FILETIME}
 
-struct HWND__
-    unused::Cint
-end
+const HWND = HANDLE
 
-const HWND = Ptr{HWND__}
+const HHOOK = HANDLE
 
-struct HHOOK__
-    unused::Cint
-end
+const HGDIOBJ = HANDLE
 
-const HHOOK = Ptr{HHOOK__}
+const HACCEL = HANDLE
 
-const HGDIOBJ = Ptr{Cvoid}
+const HBITMAP = HANDLE
 
-struct HACCEL__
-    unused::Cint
-end
+const HBRUSH = HANDLE
 
-const HACCEL = Ptr{HACCEL__}
+const HCOLORSPACE = HANDLE
 
-struct HBITMAP__
-    unused::Cint
-end
+const HDC = HANDLE
 
-const HBITMAP = Ptr{HBITMAP__}
+const HGLRC = HANDLE
 
-struct HBRUSH__
-    unused::Cint
-end
+const HDESK = HANDLE
 
-const HBRUSH = Ptr{HBRUSH__}
+const HENHMETAFILE = HANDLE
 
-struct HCOLORSPACE__
-    unused::Cint
-end
+const HFONT = HANDLE
 
-const HCOLORSPACE = Ptr{HCOLORSPACE__}
+const HICON = HANDLE
 
-struct HDC__
-    unused::Cint
-end
+const HMENU = HANDLE
 
-const HDC = Ptr{HDC__}
+const HPALETTE = HANDLE
 
-struct HGLRC__
-    unused::Cint
-end
+const HPEN = HANDLE
 
-const HGLRC = Ptr{HGLRC__}
+const HWINEVENTHOOK = HANDLE
 
-struct HDESK__
-    unused::Cint
-end
+const HMONITOR = HANDLE
 
-const HDESK = Ptr{HDESK__}
-
-struct HENHMETAFILE__
-    unused::Cint
-end
-
-const HENHMETAFILE = Ptr{HENHMETAFILE__}
-
-struct HFONT__
-    unused::Cint
-end
-
-const HFONT = Ptr{HFONT__}
-
-struct HICON__
-    unused::Cint
-end
-
-const HICON = Ptr{HICON__}
-
-struct HMENU__
-    unused::Cint
-end
-
-const HMENU = Ptr{HMENU__}
-
-struct HPALETTE__
-    unused::Cint
-end
-
-const HPALETTE = Ptr{HPALETTE__}
-
-struct HPEN__
-    unused::Cint
-end
-
-const HPEN = Ptr{HPEN__}
-
-struct HWINEVENTHOOK__
-    unused::Cint
-end
-
-const HWINEVENTHOOK = Ptr{HWINEVENTHOOK__}
-
-struct HMONITOR__
-    unused::Cint
-end
-
-const HMONITOR = Ptr{HMONITOR__}
-
-struct HUMPD__
-    unused::Cint
-end
-
-const HUMPD = Ptr{HUMPD__}
+const HUMPD = HANDLE
 
 const HCURSOR = HICON
 
@@ -477,8 +357,6 @@ const _WIN32_WINNT = 0x0501
 
 const __int64 = Clonglong
 
-const STRICT = 1
-
 const MAX_PATH = 260
 
 # Skipping MacroDefinition: NULL ( ( void * ) 0 )
@@ -552,5 +430,8 @@ const DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE = DPI_AWARENESS_CONTEXT(-3)
 const DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = DPI_AWARENESS_CONTEXT(-4)
 
 const DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED = DPI_AWARENESS_CONTEXT(-5)
+
+macro L_str(s) Base.cconvert(Cwstring, s) end
+
 
 end # module
