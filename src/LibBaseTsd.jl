@@ -92,6 +92,8 @@ const UINT_PTR = Culonglong
 
 const LONG_PTR = Clonglong
 
+const LONGLONG = Clonglong
+
 const ULONG = Culong
 
 const PULONG = Ptr{ULONG}
