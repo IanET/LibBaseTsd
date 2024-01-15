@@ -94,6 +94,14 @@ const LONG_PTR = Clonglong
 
 const LONGLONG = Clonglong
 
+const SIZE_T = ULONG_PTR
+
+const SSIZE_T = LONG_PTR
+
+const PSIZE_T = Ptr{SIZE_T}
+
+const PSSIZE_T = Ptr{SSIZE_T}
+
 const ULONG = Culong
 
 const PULONG = Ptr{ULONG}
