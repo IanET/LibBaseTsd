@@ -443,5 +443,8 @@ const DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED = DPI_AWARENESS_CONTEXT(-5)
 
 macro L_str(s) Base.cconvert(Cwstring, s) end
 
+for name in names(@__MODULE__; all=true)
+    @eval export $name
+end
 
 end # module
