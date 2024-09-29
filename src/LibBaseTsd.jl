@@ -443,10 +443,9 @@ const DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED = DPI_AWARENESS_CONTEXT(-5)
 
 macro L_str(s) Base.cconvert(Cwstring, s) end
 
+# Export all
 for name in names(@__MODULE__; all=true)
-    if name in [:eval, :include, Symbol("#eval"), Symbol("#include")]
-        continue
-    end
+    if name in [:eval, :include, Symbol("#eval"), Symbol("#include")]; continue end
     @eval export $name
 end
 
