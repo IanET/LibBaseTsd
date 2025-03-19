@@ -446,7 +446,6 @@ macro L_str(s) Base.cconvert(Cwstring, s) end
 # Export all
 for name in names(@__MODULE__; all=true)
     if name in [:eval, :include, Symbol("#eval"), Symbol("#include")]; continue end
-    @show name
     @eval export $name
 end
 
