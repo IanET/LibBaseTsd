@@ -441,7 +441,7 @@ const DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = DPI_AWARENESS_CONTEXT(-4)
 
 const DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED = DPI_AWARENESS_CONTEXT(-5)
 
-macro L_str(s) Base.cconvert(Cwstring, s) end
+macro L_str(s) Base.cwstring(s) end
 
 # Export all
 for name in names(@__MODULE__; all=true)
